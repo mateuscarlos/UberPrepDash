@@ -1,0 +1,1673 @@
+[
+  {
+    "week": 1,
+    "title": "Arrays, Hashing & Sliding Window",
+    "subtitle": "Fundamentos e padroes",
+    "totalHours": 14.5,
+    "days": [
+      {
+        "id": "w1d1",
+        "label": "Seg",
+        "dayName": "Segunda",
+        "topic": "Hashing & frequências",
+        "time": "2h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w1d1p1",
+            "name": "Two Sum",
+            "freq": "hot",
+            "lc": "1"
+          },
+          {
+            "id": "w1d1p2",
+            "name": "Valid Anagram",
+            "freq": "hot",
+            "lc": "242"
+          },
+          {
+            "id": "w1d1p3",
+            "name": "Group Anagrams",
+            "freq": "hot",
+            "lc": "49"
+          },
+          {
+            "id": "w1d1p4",
+            "name": "Remove Duplicates from Sorted Array",
+            "freq": "hot",
+            "lc": "26"
+          }
+        ]
+      },
+      {
+        "id": "w1d2",
+        "label": "Ter",
+        "dayName": "Terça",
+        "topic": "Two Pointers",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w1d2p1",
+            "name": "Container With Most Water",
+            "freq": "hot",
+            "lc": "11"
+          },
+          {
+            "id": "w1d2p2",
+            "name": "3Sum",
+            "freq": "hot",
+            "lc": "15"
+          },
+          {
+            "id": "w1d2p3",
+            "name": "Trapping Rain Water",
+            "freq": "hot",
+            "lc": "42"
+          }
+        ]
+      },
+      {
+        "id": "w1d3",
+        "label": "Qua",
+        "dayName": "Quarta",
+        "topic": "Sliding Window",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w1d3p1",
+            "name": "Longest Substring Without Repeating",
+            "freq": "hot",
+            "lc": "3"
+          },
+          {
+            "id": "w1d3p2",
+            "name": "Minimum Window Substring",
+            "freq": "hot",
+            "lc": "76"
+          },
+          {
+            "id": "w1d3p3",
+            "name": "Fruit Into Baskets (sub #340)",
+            "freq": "mid",
+            "lc": "904"
+          },
+          {
+            "id": "w1d3p4",
+            "name": "Subarray Sum Equals K",
+            "freq": "mid",
+            "lc": "560"
+          }
+        ]
+      },
+      {
+        "id": "w1d4",
+        "label": "Qui",
+        "dayName": "Quinta",
+        "topic": "Sliding Window avançado + deque",
+        "time": "3h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w1d4p1",
+            "name": "Sliding Window Maximum",
+            "freq": "mid",
+            "lc": "239"
+          },
+          {
+            "id": "w1d4p2",
+            "name": "Permutation in String",
+            "freq": "mid",
+            "lc": "567"
+          },
+          {
+            "id": "w1d4p3",
+            "name": "Find All Anagrams in a String",
+            "freq": "mid",
+            "lc": "438"
+          },
+          {
+            "id": "w1d4p4",
+            "name": "Longest Consecutive Sequence",
+            "freq": "hot",
+            "lc": "128"
+          }
+        ]
+      },
+      {
+        "id": "w1d5",
+        "label": "Sex",
+        "dayName": "Sexta",
+        "topic": "Arrays — matrix e simulação",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w1d5p1",
+            "name": "Valid Sudoku",
+            "freq": "hot",
+            "lc": "36"
+          },
+          {
+            "id": "w1d5p2",
+            "name": "Spiral Matrix",
+            "freq": "hot",
+            "lc": "54"
+          },
+          {
+            "id": "w1d5p3",
+            "name": "Maximum Subarray",
+            "freq": "hot",
+            "lc": "53"
+          },
+          {
+            "id": "w1d5p4",
+            "name": "Best Time to Buy and Sell Stock",
+            "freq": "hot",
+            "lc": "121"
+          },
+          {
+            "id": "w1d5p5",
+            "name": "Best Time to Buy and Sell Stock II",
+            "freq": "hot",
+            "lc": "122"
+          }
+        ]
+      },
+      {
+        "id": "w1d6",
+        "label": "Sáb",
+        "dayName": "Sábado",
+        "topic": "Revisão sem IDE",
+        "time": "2h",
+        "review": true,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w1d6p1",
+            "name": "Min Window Substring (refazer)",
+            "freq": "ok",
+            "lc": "76"
+          },
+          {
+            "id": "w1d6p2",
+            "name": "Sliding Window Max (refazer)",
+            "freq": "ok",
+            "lc": "239"
+          },
+          {
+            "id": "w1d6p3",
+            "name": "3Sum (refazer)",
+            "freq": "ok",
+            "lc": "15"
+          },
+          {
+            "id": "w1d6p4",
+            "name": "Subarray Sum K (refazer)",
+            "freq": "ok",
+            "lc": "560"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "week": 2,
+    "title": "Stack, Calculadoras & Binary Search",
+    "subtitle": "Fundamentos e padroes",
+    "totalHours": 14.0,
+    "days": [
+      {
+        "id": "w2d1",
+        "label": "Seg",
+        "dayName": "Segunda",
+        "topic": "Stack fundamentos",
+        "time": "2h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w2d1p1",
+            "name": "Valid Parentheses",
+            "freq": "hot",
+            "lc": "20"
+          },
+          {
+            "id": "w2d1p2",
+            "name": "Min Stack",
+            "freq": "hot",
+            "lc": "155"
+          },
+          {
+            "id": "w2d1p3",
+            "name": "Evaluate Reverse Polish Notation",
+            "freq": "hot",
+            "lc": "150"
+          },
+          {
+            "id": "w2d1p4",
+            "name": "Daily Temperatures",
+            "freq": "mid",
+            "lc": "739"
+          }
+        ]
+      },
+      {
+        "id": "w2d2",
+        "label": "Ter",
+        "dayName": "Terça",
+        "topic": "Calculadoras com pilha",
+        "time": "3h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w2d2p1",
+            "name": "Basic Calculator",
+            "freq": "hot",
+            "lc": "224"
+          },
+          {
+            "id": "w2d2p2",
+            "name": "Basic Calculator II",
+            "freq": "mid",
+            "lc": "227"
+          },
+          {
+            "id": "w2d2p3",
+            "name": "Basic Calculator III",
+            "freq": "mid",
+            "lc": "772"
+          },
+          {
+            "id": "w2d2p4",
+            "name": "Generate Parentheses",
+            "freq": "hot",
+            "lc": "22"
+          }
+        ]
+      },
+      {
+        "id": "w2d3",
+        "label": "Qua",
+        "dayName": "Quarta",
+        "topic": "Binary Search clássico",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w2d3p1",
+            "name": "Search in Rotated Sorted Array",
+            "freq": "hot",
+            "lc": "33"
+          },
+          {
+            "id": "w2d3p2",
+            "name": "Find First and Last Position",
+            "freq": "hot",
+            "lc": "34"
+          },
+          {
+            "id": "w2d3p3",
+            "name": "Find Minimum in Rotated Sorted Array",
+            "freq": "mid",
+            "lc": "153"
+          },
+          {
+            "id": "w2d3p4",
+            "name": "Find Peak Element",
+            "freq": "hot",
+            "lc": "162"
+          },
+          {
+            "id": "w2d3p5",
+            "name": "Search a 2D Matrix",
+            "freq": "hot",
+            "lc": "74"
+          }
+        ]
+      },
+      {
+        "id": "w2d4",
+        "label": "Qui",
+        "dayName": "Quinta",
+        "topic": "Binary Search on answer + design",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w2d4p1",
+            "name": "Random Pick with Weight",
+            "freq": "mid",
+            "lc": "528"
+          },
+          {
+            "id": "w2d4p2",
+            "name": "Kth Smallest in Multiplication Table",
+            "freq": "mid",
+            "lc": "668"
+          },
+          {
+            "id": "w2d4p3",
+            "name": "Capacity to Ship Packages",
+            "freq": "mid",
+            "lc": "1011"
+          },
+          {
+            "id": "w2d4p4",
+            "name": "Insert Delete GetRandom O(1)",
+            "freq": "hot",
+            "lc": "380"
+          }
+        ]
+      },
+      {
+        "id": "w2d5",
+        "label": "Sex",
+        "dayName": "Sexta",
+        "topic": "Intervals",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w2d5p1",
+            "name": "Merge Intervals",
+            "freq": "hot",
+            "lc": "56"
+          },
+          {
+            "id": "w2d5p2",
+            "name": "Insert Interval",
+            "freq": "hot",
+            "lc": "57"
+          },
+          {
+            "id": "w2d5p3",
+            "name": "Interval List Intersections",
+            "freq": "mid",
+            "lc": "986"
+          },
+          {
+            "id": "w2d5p4",
+            "name": "Meeting Rooms II",
+            "freq": "mid",
+            "lc": "253"
+          },
+          {
+            "id": "w2d5p5",
+            "name": "Employee Free Time",
+            "freq": "mid",
+            "lc": "759"
+          }
+        ]
+      },
+      {
+        "id": "w2d6",
+        "label": "Sáb",
+        "dayName": "Sábado",
+        "topic": "Mock cronometrado",
+        "time": "1.5h",
+        "review": true,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w2d6p1",
+            "name": "Search Rotated (refazer)",
+            "freq": "ok",
+            "lc": "33"
+          },
+          {
+            "id": "w2d6p2",
+            "name": "Merge Intervals (refazer)",
+            "freq": "ok",
+            "lc": "56"
+          },
+          {
+            "id": "w2d6p3",
+            "name": "Basic Calculator (refazer)",
+            "freq": "ok",
+            "lc": "224"
+          },
+          {
+            "id": "w2d6p4",
+            "name": "Random Pick (refazer)",
+            "freq": "ok",
+            "lc": "528"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "week": 3,
+    "title": "Linked List & Trees",
+    "subtitle": "Foco principal da semana",
+    "totalHours": 15.0,
+    "days": [
+      {
+        "id": "w3d1",
+        "label": "Seg",
+        "dayName": "Segunda",
+        "topic": "Linked List manipulação",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w3d1p1",
+            "name": "Merge Two Sorted Lists",
+            "freq": "hot",
+            "lc": "21"
+          },
+          {
+            "id": "w3d1p2",
+            "name": "Add Two Numbers",
+            "freq": "hot",
+            "lc": "2"
+          },
+          {
+            "id": "w3d1p3",
+            "name": "Copy List with Random Pointer",
+            "freq": "hot",
+            "lc": "138"
+          },
+          {
+            "id": "w3d1p4",
+            "name": "LRU Cache",
+            "freq": "hot",
+            "lc": "146"
+          }
+        ]
+      },
+      {
+        "id": "w3d2",
+        "label": "Ter",
+        "dayName": "Terça",
+        "topic": "LRU + LFU + Serialize",
+        "time": "3h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w3d2p1",
+            "name": "LFU Cache",
+            "freq": "mid",
+            "lc": "460"
+          },
+          {
+            "id": "w3d2p2",
+            "name": "Serialize and Deserialize Binary Tree",
+            "freq": "mid",
+            "lc": "297"
+          },
+          {
+            "id": "w3d2p3",
+            "name": "Serialize/Deserialize N-ary Tree",
+            "freq": "mid",
+            "lc": "428"
+          }
+        ]
+      },
+      {
+        "id": "w3d3",
+        "label": "Qua",
+        "dayName": "Quarta",
+        "topic": "Trees — DFS e LCA",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w3d3p1",
+            "name": "LCA of Binary Tree",
+            "freq": "hot",
+            "lc": "236"
+          },
+          {
+            "id": "w3d3p2",
+            "name": "Binary Tree Right Side View",
+            "freq": "hot",
+            "lc": "199"
+          },
+          {
+            "id": "w3d3p3",
+            "name": "Binary Tree Level Order Traversal",
+            "freq": "hot",
+            "lc": "102"
+          },
+          {
+            "id": "w3d3p4",
+            "name": "Symmetric Tree",
+            "freq": "hot",
+            "lc": "101"
+          }
+        ]
+      },
+      {
+        "id": "w3d4",
+        "label": "Qui",
+        "dayName": "Quinta",
+        "topic": "Trees — paths e BST",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w3d4p1",
+            "name": "Binary Tree Maximum Path Sum",
+            "freq": "mid",
+            "lc": "124"
+          },
+          {
+            "id": "w3d4p2",
+            "name": "BST Iterator",
+            "freq": "hot",
+            "lc": "173"
+          },
+          {
+            "id": "w3d4p3",
+            "name": "Kth Smallest in BST",
+            "freq": "hot",
+            "lc": "230"
+          },
+          {
+            "id": "w3d4p4",
+            "name": "Validate BST",
+            "freq": "mid",
+            "lc": "98"
+          }
+        ]
+      },
+      {
+        "id": "w3d5",
+        "label": "Sex",
+        "dayName": "Sexta",
+        "topic": "Tries",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w3d5p1",
+            "name": "Implement Trie",
+            "freq": "mid",
+            "lc": "208"
+          },
+          {
+            "id": "w3d5p2",
+            "name": "Add and Search Word",
+            "freq": "mid",
+            "lc": "211"
+          },
+          {
+            "id": "w3d5p3",
+            "name": "Word Search II",
+            "freq": "hot",
+            "lc": "212"
+          },
+          {
+            "id": "w3d5p4",
+            "name": "Design Search Autocomplete",
+            "freq": "mid",
+            "lc": "642"
+          }
+        ]
+      },
+      {
+        "id": "w3d6",
+        "label": "Sáb",
+        "dayName": "Sábado",
+        "topic": "Revisão Trees + Design",
+        "time": "2h",
+        "review": true,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w3d6p1",
+            "name": "LRU Cache (refazer)",
+            "freq": "ok",
+            "lc": "146"
+          },
+          {
+            "id": "w3d6p2",
+            "name": "Serialize BT (refazer)",
+            "freq": "ok",
+            "lc": "297"
+          },
+          {
+            "id": "w3d6p3",
+            "name": "LCA (refazer)",
+            "freq": "ok",
+            "lc": "236"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "week": 4,
+    "title": "Graphs — núcleo absoluto Uber",
+    "subtitle": "Foco principal da semana",
+    "totalHours": 16.0,
+    "days": [
+      {
+        "id": "w4d1",
+        "label": "Seg",
+        "dayName": "Segunda",
+        "topic": "BFS/DFS em grid",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w4d1p1",
+            "name": "Number of Islands",
+            "freq": "hot",
+            "lc": "200"
+          },
+          {
+            "id": "w4d1p2",
+            "name": "Surrounded Regions",
+            "freq": "hot",
+            "lc": "130"
+          },
+          {
+            "id": "w4d1p3",
+            "name": "Minesweeper",
+            "freq": "mid",
+            "lc": "529"
+          },
+          {
+            "id": "w4d1p4",
+            "name": "Walls and Gates",
+            "freq": "mid",
+            "lc": "286"
+          }
+        ]
+      },
+      {
+        "id": "w4d2",
+        "label": "Ter",
+        "dayName": "Terça",
+        "topic": "BFS em grafo implícito",
+        "time": "3h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w4d2p1",
+            "name": "Word Ladder",
+            "freq": "hot",
+            "lc": "127"
+          },
+          {
+            "id": "w4d2p2",
+            "name": "Bus Routes",
+            "freq": "mid",
+            "lc": "815"
+          },
+          {
+            "id": "w4d2p3",
+            "name": "Sliding Puzzle",
+            "freq": "mid",
+            "lc": "773"
+          },
+          {
+            "id": "w4d2p4",
+            "name": "Snakes and Ladders",
+            "freq": "hot",
+            "lc": "909"
+          }
+        ]
+      },
+      {
+        "id": "w4d3",
+        "label": "Qua",
+        "dayName": "Quarta",
+        "topic": "Clone + Weighted graphs",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w4d3p1",
+            "name": "Clone Graph",
+            "freq": "hot",
+            "lc": "133"
+          },
+          {
+            "id": "w4d3p2",
+            "name": "Evaluate Division",
+            "freq": "hot",
+            "lc": "399"
+          },
+          {
+            "id": "w4d3p3",
+            "name": "Construct Quad Tree",
+            "freq": "hot",
+            "lc": "427"
+          }
+        ]
+      },
+      {
+        "id": "w4d4",
+        "label": "Qui",
+        "dayName": "Quinta",
+        "topic": "Topological Sort",
+        "time": "3h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w4d4p1",
+            "name": "Course Schedule",
+            "freq": "hot",
+            "lc": "207"
+          },
+          {
+            "id": "w4d4p2",
+            "name": "Course Schedule II",
+            "freq": "hot",
+            "lc": "210"
+          },
+          {
+            "id": "w4d4p3",
+            "name": "Reconstruct Itinerary",
+            "freq": "mid",
+            "lc": "332"
+          },
+          {
+            "id": "w4d4p4",
+            "name": "Alien Dictionary",
+            "freq": "mid",
+            "lc": "269"
+          }
+        ]
+      },
+      {
+        "id": "w4d5",
+        "label": "Sex",
+        "dayName": "Sexta",
+        "topic": "BFS avançado",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w4d5p1",
+            "name": "Shortest Distance from All Buildings",
+            "freq": "mid",
+            "lc": "317"
+          },
+          {
+            "id": "w4d5p2",
+            "name": "The Maze",
+            "freq": "mid",
+            "lc": "490"
+          },
+          {
+            "id": "w4d5p3",
+            "name": "Longest Increasing Path in Matrix",
+            "freq": "mid",
+            "lc": "329"
+          }
+        ]
+      },
+      {
+        "id": "w4d6",
+        "label": "Sáb",
+        "dayName": "Sábado",
+        "topic": "Revisão intensiva Graphs",
+        "time": "2.5h",
+        "review": true,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w4d6p1",
+            "name": "Reconstruct Itinerary (refazer)",
+            "freq": "ok",
+            "lc": "332"
+          },
+          {
+            "id": "w4d6p2",
+            "name": "Bus Routes (refazer)",
+            "freq": "ok",
+            "lc": "815"
+          },
+          {
+            "id": "w4d6p3",
+            "name": "Alien Dictionary (refazer)",
+            "freq": "ok",
+            "lc": "269"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "week": 5,
+    "title": "Heaps, Backtracking & Greedy",
+    "subtitle": "Foco principal da semana",
+    "totalHours": 16.0,
+    "days": [
+      {
+        "id": "w5d1",
+        "label": "Seg",
+        "dayName": "Segunda",
+        "topic": "Heaps fundamentos",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w5d1p1",
+            "name": "Find Median from Data Stream",
+            "freq": "hot",
+            "lc": "295"
+          },
+          {
+            "id": "w5d1p2",
+            "name": "Merge k Sorted Lists",
+            "freq": "mid",
+            "lc": "23"
+          },
+          {
+            "id": "w5d1p3",
+            "name": "Top K Frequent Elements",
+            "freq": "mid",
+            "lc": "347"
+          },
+          {
+            "id": "w5d1p4",
+            "name": "K Closest Points to Origin",
+            "freq": "mid",
+            "lc": "973"
+          },
+          {
+            "id": "w5d1p5",
+            "name": "Task Scheduler",
+            "freq": "mid",
+            "lc": "621"
+          }
+        ]
+      },
+      {
+        "id": "w5d2",
+        "label": "Ter",
+        "dayName": "Terça",
+        "topic": "Heaps — design",
+        "time": "3h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w5d2p1",
+            "name": "Meeting Rooms II (revisão)",
+            "freq": "mid",
+            "lc": "253"
+          },
+          {
+            "id": "w5d2p2",
+            "name": "Daily Temperatures (revisão)",
+            "freq": "mid",
+            "lc": "739"
+          },
+          {
+            "id": "w5d2p3",
+            "name": "Sort Characters By Frequency",
+            "freq": "mid",
+            "lc": "451"
+          }
+        ]
+      },
+      {
+        "id": "w5d3",
+        "label": "Qua",
+        "dayName": "Quarta",
+        "topic": "Backtracking core",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w5d3p1",
+            "name": "Permutations",
+            "freq": "hot",
+            "lc": "46"
+          },
+          {
+            "id": "w5d3p2",
+            "name": "Combination Sum",
+            "freq": "hot",
+            "lc": "39"
+          },
+          {
+            "id": "w5d3p3",
+            "name": "Letter Combinations",
+            "freq": "hot",
+            "lc": "17"
+          },
+          {
+            "id": "w5d3p4",
+            "name": "Word Search",
+            "freq": "hot",
+            "lc": "79"
+          },
+          {
+            "id": "w5d3p5",
+            "name": "Generate Parentheses (revisão)",
+            "freq": "hot",
+            "lc": "22"
+          }
+        ]
+      },
+      {
+        "id": "w5d4",
+        "label": "Qui",
+        "dayName": "Quinta",
+        "topic": "Backtracking avançado",
+        "time": "3h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w5d4p1",
+            "name": "Word Pattern II",
+            "freq": "mid",
+            "lc": "291"
+          },
+          {
+            "id": "w5d4p2",
+            "name": "Optimal Account Balancing",
+            "freq": "mid",
+            "lc": "465"
+          },
+          {
+            "id": "w5d4p3",
+            "name": "Palindrome Partitioning",
+            "freq": "mid",
+            "lc": "131"
+          }
+        ]
+      },
+      {
+        "id": "w5d5",
+        "label": "Sex",
+        "dayName": "Sexta",
+        "topic": "Greedy + Math",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w5d5p1",
+            "name": "Jump Game II",
+            "freq": "hot",
+            "lc": "45"
+          },
+          {
+            "id": "w5d5p2",
+            "name": "Best Time II (revisão)",
+            "freq": "hot",
+            "lc": "122"
+          },
+          {
+            "id": "w5d5p3",
+            "name": "Jump Game",
+            "freq": "hot",
+            "lc": "55"
+          },
+          {
+            "id": "w5d5p4",
+            "name": "Max Points on a Line",
+            "freq": "hot",
+            "lc": "149"
+          }
+        ]
+      },
+      {
+        "id": "w5d6",
+        "label": "Sáb",
+        "dayName": "Sábado",
+        "topic": "Mock OA CodeSignal",
+        "time": "2.5h",
+        "review": true,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w5d6p1",
+            "name": "Median Stream (mock)",
+            "freq": "ok",
+            "lc": "295"
+          },
+          {
+            "id": "w5d6p2",
+            "name": "Permutations (mock)",
+            "freq": "ok",
+            "lc": "46"
+          },
+          {
+            "id": "w5d6p3",
+            "name": "Meeting Rooms II (mock)",
+            "freq": "ok",
+            "lc": "253"
+          },
+          {
+            "id": "w5d6p4",
+            "name": "Bus Routes (mock)",
+            "freq": "ok",
+            "lc": "815"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "week": 6,
+    "title": "Dynamic Programming",
+    "subtitle": "Foco principal da semana",
+    "totalHours": 16.5,
+    "days": [
+      {
+        "id": "w6d1",
+        "label": "Seg",
+        "dayName": "Segunda",
+        "topic": "1D DP clássicos",
+        "time": "2.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w6d1p1",
+            "name": "Climbing Stairs",
+            "freq": "hot",
+            "lc": "70"
+          },
+          {
+            "id": "w6d1p2",
+            "name": "House Robber",
+            "freq": "hot",
+            "lc": "198"
+          },
+          {
+            "id": "w6d1p3",
+            "name": "Word Break",
+            "freq": "hot",
+            "lc": "139"
+          },
+          {
+            "id": "w6d1p4",
+            "name": "Coin Change",
+            "freq": "mid",
+            "lc": "322"
+          },
+          {
+            "id": "w6d1p5",
+            "name": "Longest Increasing Subsequence",
+            "freq": "mid",
+            "lc": "300"
+          }
+        ]
+      },
+      {
+        "id": "w6d2",
+        "label": "Ter",
+        "dayName": "Terça",
+        "topic": "1D DP — strings",
+        "time": "3h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w6d2p1",
+            "name": "Longest Palindromic Substring",
+            "freq": "hot",
+            "lc": "5"
+          },
+          {
+            "id": "w6d2p2",
+            "name": "Palindromic Substrings",
+            "freq": "mid",
+            "lc": "647"
+          },
+          {
+            "id": "w6d2p3",
+            "name": "Decode Ways",
+            "freq": "mid",
+            "lc": "91"
+          },
+          {
+            "id": "w6d2p4",
+            "name": "Maximum Product Subarray",
+            "freq": "mid",
+            "lc": "152"
+          }
+        ]
+      },
+      {
+        "id": "w6d3",
+        "label": "Qua",
+        "dayName": "Quarta",
+        "topic": "2D DP — strings",
+        "time": "3h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w6d3p1",
+            "name": "Interleaving String",
+            "freq": "hot",
+            "lc": "97"
+          },
+          {
+            "id": "w6d3p2",
+            "name": "Edit Distance",
+            "freq": "mid",
+            "lc": "72"
+          },
+          {
+            "id": "w6d3p3",
+            "name": "Partition Equal Subset Sum",
+            "freq": "mid",
+            "lc": "416"
+          },
+          {
+            "id": "w6d3p4",
+            "name": "Unique Paths II",
+            "freq": "mid",
+            "lc": "63"
+          }
+        ]
+      },
+      {
+        "id": "w6d4",
+        "label": "Qui",
+        "dayName": "Quinta",
+        "topic": "2D DP — grid e stocks",
+        "time": "3h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w6d4p1",
+            "name": "Maximal Square",
+            "freq": "hot",
+            "lc": "221"
+          },
+          {
+            "id": "w6d4p2",
+            "name": "Unique Paths II (revisão)",
+            "freq": "mid",
+            "lc": "63"
+          },
+          {
+            "id": "w6d4p3",
+            "name": "Best Time Stock III",
+            "freq": "hot",
+            "lc": "123"
+          },
+          {
+            "id": "w6d4p4",
+            "name": "Best Time Stock IV",
+            "freq": "hot",
+            "lc": "188"
+          }
+        ]
+      },
+      {
+        "id": "w6d5",
+        "label": "Sex",
+        "dayName": "Sexta",
+        "topic": "DP Hard Uber",
+        "time": "3h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w6d5p1",
+            "name": "Cherry Pickup",
+            "freq": "mid",
+            "lc": "741"
+          },
+          {
+            "id": "w6d5p2",
+            "name": "Longest Increasing Path in Matrix (revisão)",
+            "freq": "mid",
+            "lc": "329"
+          },
+          {
+            "id": "w6d5p3",
+            "name": "Word Pattern II (revisão)",
+            "freq": "mid",
+            "lc": "291"
+          }
+        ]
+      },
+      {
+        "id": "w6d6",
+        "label": "Sáb",
+        "dayName": "Sábado",
+        "topic": "Revisão DP whiteboard",
+        "time": "2h",
+        "review": true,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w6d6p1",
+            "name": "Interleaving String (refazer)",
+            "freq": "ok",
+            "lc": "97"
+          },
+          {
+            "id": "w6d6p2",
+            "name": "Cherry Pickup (refazer)",
+            "freq": "ok",
+            "lc": "741"
+          },
+          {
+            "id": "w6d6p3",
+            "name": "Word Break (refazer)",
+            "freq": "ok",
+            "lc": "139"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "week": 7,
+    "title": "Strings especiais & Simulação",
+    "subtitle": "Foco principal da semana",
+    "totalHours": 16.0,
+    "days": [
+      {
+        "id": "w7d1",
+        "label": "Seg",
+        "dayName": "Segunda",
+        "topic": "Strings simulação",
+        "time": "3h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w7d1p1",
+            "name": "Text Justification",
+            "freq": "hot",
+            "lc": "68"
+          },
+          {
+            "id": "w7d1p2",
+            "name": "Tag Validator",
+            "freq": "mid",
+            "lc": "591"
+          },
+          {
+            "id": "w7d1p3",
+            "name": "Basic Calculator II (revisão)",
+            "freq": "mid",
+            "lc": "227"
+          },
+          {
+            "id": "w7d1p4",
+            "name": "Basic Calculator III (revisão)",
+            "freq": "mid",
+            "lc": "772"
+          }
+        ]
+      },
+      {
+        "id": "w7d2",
+        "label": "Ter",
+        "dayName": "Terça",
+        "topic": "Design + estruturas especiais",
+        "time": "3h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w7d2p1",
+            "name": "LFU Cache (revisão)",
+            "freq": "mid",
+            "lc": "460"
+          },
+          {
+            "id": "w7d2p2",
+            "name": "Design Search Autocomplete (revisão)",
+            "freq": "mid",
+            "lc": "642"
+          },
+          {
+            "id": "w7d2p3",
+            "name": "Random Pick with Weight (revisão)",
+            "freq": "mid",
+            "lc": "528"
+          }
+        ]
+      },
+      {
+        "id": "w7d3",
+        "label": "Qua",
+        "dayName": "Quarta",
+        "topic": "Revisão Graphs hard",
+        "time": "2.5h",
+        "review": true,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w7d3p1",
+            "name": "Reconstruct Itinerary (refazer)",
+            "freq": "ok",
+            "lc": "332"
+          },
+          {
+            "id": "w7d3p2",
+            "name": "Alien Dictionary (refazer)",
+            "freq": "ok",
+            "lc": "269"
+          },
+          {
+            "id": "w7d3p3",
+            "name": "Bus Routes (refazer)",
+            "freq": "ok",
+            "lc": "815"
+          }
+        ]
+      },
+      {
+        "id": "w7d4",
+        "label": "Qui",
+        "dayName": "Quinta",
+        "topic": "Revisão DP hard + Uber",
+        "time": "2.5h",
+        "review": true,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w7d4p1",
+            "name": "Cherry Pickup (refazer)",
+            "freq": "ok",
+            "lc": "741"
+          },
+          {
+            "id": "w7d4p2",
+            "name": "Sliding Puzzle (refazer)",
+            "freq": "ok",
+            "lc": "773"
+          },
+          {
+            "id": "w7d4p3",
+            "name": "Optimal Account Balancing (refazer)",
+            "freq": "ok",
+            "lc": "465"
+          }
+        ]
+      },
+      {
+        "id": "w7d5",
+        "label": "Sex",
+        "dayName": "Sexta",
+        "topic": "Gaps e pontos fracos",
+        "time": "2h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w7d5p1",
+            "name": "Median of Two Sorted Arrays",
+            "freq": "hot",
+            "lc": "4"
+          },
+          {
+            "id": "w7d5p2",
+            "name": "Max Points on a Line",
+            "freq": "hot",
+            "lc": "149"
+          },
+          {
+            "id": "w7d5p3",
+            "name": "Longest Increasing Path (refazer)",
+            "freq": "ok",
+            "lc": "329"
+          },
+          {
+            "id": "w7d5p4",
+            "name": "Tag Validator (refazer)",
+            "freq": "ok",
+            "lc": "591"
+          }
+        ]
+      },
+      {
+        "id": "w7d6",
+        "label": "Sáb",
+        "dayName": "Sábado",
+        "topic": "Mock II — onsite",
+        "time": "3h",
+        "review": true,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w7d6p1",
+            "name": "Median Stream (mock)",
+            "freq": "ok",
+            "lc": "295"
+          },
+          {
+            "id": "w7d6p2",
+            "name": "Reconstruct Itinerary (mock)",
+            "freq": "ok",
+            "lc": "332"
+          },
+          {
+            "id": "w7d6p3",
+            "name": "Interleaving String (mock)",
+            "freq": "ok",
+            "lc": "97"
+          },
+          {
+            "id": "w7d6p4",
+            "name": "Text Justification (mock)",
+            "freq": "ok",
+            "lc": "68"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "week": 8,
+    "title": "Simulados finais",
+    "subtitle": "Foco principal da semana",
+    "totalHours": 9.0,
+    "days": [
+      {
+        "id": "w8d1",
+        "label": "Seg",
+        "dayName": "Segunda",
+        "topic": "Mock III CodeSignal",
+        "time": "2.5h",
+        "review": true,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w8d1p1",
+            "name": "Bus Routes",
+            "freq": "mid",
+            "lc": "815"
+          },
+          {
+            "id": "w8d1p2",
+            "name": "Interleaving String",
+            "freq": "hot",
+            "lc": "97"
+          },
+          {
+            "id": "w8d1p3",
+            "name": "Optimal Account Balancing",
+            "freq": "mid",
+            "lc": "465"
+          },
+          {
+            "id": "w8d1p4",
+            "name": "Tag Validator",
+            "freq": "mid",
+            "lc": "591"
+          }
+        ]
+      },
+      {
+        "id": "w8d2",
+        "label": "Ter",
+        "dayName": "Terça",
+        "topic": "5 pontos fracos",
+        "time": "2h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w8d2p1",
+            "name": "Cherry Pickup",
+            "freq": "mid",
+            "lc": "741"
+          },
+          {
+            "id": "w8d2p2",
+            "name": "Reconstruct Itinerary",
+            "freq": "mid",
+            "lc": "332"
+          },
+          {
+            "id": "w8d2p3",
+            "name": "Basic Calculator",
+            "freq": "hot",
+            "lc": "224"
+          },
+          {
+            "id": "w8d2p4",
+            "name": "Optimal Account Balancing",
+            "freq": "mid",
+            "lc": "465"
+          },
+          {
+            "id": "w8d2p5",
+            "name": "Tag Validator",
+            "freq": "mid",
+            "lc": "591"
+          }
+        ]
+      },
+      {
+        "id": "w8d3",
+        "label": "Qua",
+        "dayName": "Quarta",
+        "topic": "Mock IV — narração total",
+        "time": "2h",
+        "review": true,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w8d3p1",
+            "name": "Bus Routes",
+            "freq": "mid",
+            "lc": "815"
+          },
+          {
+            "id": "w8d3p2",
+            "name": "Interleaving String",
+            "freq": "hot",
+            "lc": "97"
+          },
+          {
+            "id": "w8d3p3",
+            "name": "Median Stream",
+            "freq": "hot",
+            "lc": "295"
+          },
+          {
+            "id": "w8d3p4",
+            "name": "Alien Dictionary",
+            "freq": "mid",
+            "lc": "269"
+          }
+        ]
+      },
+      {
+        "id": "w8d4",
+        "label": "Qui",
+        "dayName": "Quinta",
+        "topic": "Templates de memória",
+        "time": "1.5h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w8d4p1",
+            "name": "BFS template",
+            "freq": "hot",
+            "lc": "200"
+          },
+          {
+            "id": "w8d4p2",
+            "name": "Dijkstra/Heap template",
+            "freq": "hot",
+            "lc": "295"
+          },
+          {
+            "id": "w8d4p3",
+            "name": "Trie template",
+            "freq": "mid",
+            "lc": "208"
+          },
+          {
+            "id": "w8d4p4",
+            "name": "DP 2D template",
+            "freq": "hot",
+            "lc": "97"
+          }
+        ]
+      },
+      {
+        "id": "w8d5",
+        "label": "Sex",
+        "dayName": "Sexta",
+        "topic": "Aquecimento leve",
+        "time": "1h",
+        "review": false,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": [
+          {
+            "id": "w8d5p1",
+            "name": "Valid Parentheses",
+            "freq": "hot",
+            "lc": "20"
+          },
+          {
+            "id": "w8d5p2",
+            "name": "Valid Anagram",
+            "freq": "hot",
+            "lc": "242"
+          }
+        ]
+      },
+      {
+        "id": "w8d6",
+        "label": "26/05",
+        "dayName": "Entrevista",
+        "topic": "Entrevista",
+        "time": "—",
+        "review": true,
+        "note": "Ver anotações no arquivo markdown original.",
+        "problems": []
+      }
+    ]
+  }
+]

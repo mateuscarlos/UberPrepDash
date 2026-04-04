@@ -1,0 +1,11 @@
+services:
+  uberprepdash:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: uberprepdash
+    ports:
+      - "3080:80"
+    restart: always
+    labels:
+      - "com.docker.desktop.restart=always"
