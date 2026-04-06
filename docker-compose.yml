@@ -6,6 +6,11 @@ services:
     container_name: uberprepdash
     ports:
       - "3080:80"
+    environment:
+      - PORT=80
+      - DATABASE_URL=file:/app/database/uberprep.db
+    volumes:
+      - ./database:/app/database
     restart: always
     labels:
       - "com.docker.desktop.restart=always"

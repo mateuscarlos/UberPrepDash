@@ -1,78 +1,89 @@
 import { useState, useEffect } from 'react';
 
-const STORAGE_KEY = 'uber_prep_ai';
+export function useProgress(initialData) {
+  const [weeks, setWeeks] = useState(initialData.weeks || []);
+  const [config, setConfigLocal] = useState(initialData.config || { apiKey: '', model: '' });
 
-export function useProgress(weeks) {
-  const [completedProblems, setCompletedProblems] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        return parsed.checked || {};
-      }
-    } catch(e) {}
-    return {};
-  });
-
-  const [notes, setNotes] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        return parsed.aiTracker || {};
-      }
-    } catch(e) {}
-    return {};
-  });
-
-  const [config, setConfig] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        return parsed.config || { apiKey: '', model: 'gemini-2.5-flash' };
-      }
-    } catch(e) {}
-    return { apiKey: '', model: 'gemini-2.5-flash' };
-  });
-
+  // Update effect to handle refetches if initialData changes
   useEffect(() => {
+    setWeeks(initialData.weeks || []);
+    setConfigLocal(initialData.config || { apiKey: '', model: '' });
+  }, [initialData]);
+
+  const toggleProblem = async (id, isCompleted) => {
+    setWeeks(prev => prev.map(w => ({
+      ...w,
+      days: w.days.map(d => ({
+        ...d,
+        problems: d.problems.map(p => p.id === id ? { ...p, isCompleted } : p)
+      }))
+    })));
+
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({
-        checked: completedProblems,
-        config,
-        aiTracker: notes,
-      }));
-    } catch(e) {}
-  }, [completedProblems, config, notes]);
-
-  const toggleProblem = (id, isDone) => {
-    setCompletedProblems(prev => ({ ...prev, [id]: isDone }));
+      await fetch(`/api/problem/${id}/toggle`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ isCompleted })
+      });
+    } catch(e) { console.error(e) }
   };
 
-  const isCompleted = (id) => !!completedProblems[id];
-
-  const saveNote = (probId, text) => {
-    setNotes(prev => ({
-      ...prev,
-      [probId]: { ...(prev[probId] || { notes: '', chat: [] }), notes: text }
-    }));
+  const isCompleted = (id) => {
+    for (const w of weeks) {
+      for (const d of w.days) {
+        const p = d.problems.find(p => p.id === id);
+        if (p) return p.isCompleted;
+      }
+    }
+    return false;
   };
 
-  const getNote = (probId) => (notes[probId]?.notes || '');
+  const saveNote = async (probId, text) => {
+    setWeeks(prev => prev.map(w => ({
+      ...w,
+      days: w.days.map(d => ({
+        ...d,
+        problems: d.problems.map(p => p.id === probId ? { ...p, userNote: text } : p)
+      }))
+    })));
 
-  const saveConfig = (newConfig) => {
-    setConfig(newConfig);
+    try {
+      await fetch(`/api/problem/${probId}/note`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ note: text })
+      });
+    } catch(e) { console.error(e) }
   };
 
-  // Compute stats
+  const getNote = (id) => {
+    for (const w of weeks) {
+      for (const d of w.days) {
+        const p = d.problems.find(p => p.id === id);
+        if (p) return p.userNote || '';
+      }
+    }
+    return '';
+  };
+
+  const saveConfig = async (newConfig) => {
+    setConfigLocal(newConfig);
+    try {
+      await fetch(`/api/config`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newConfig)
+      });
+    } catch(e) { console.error(e) }
+  };
+
   const getWeekStats = (weekIdx) => {
     const w = weeks[weekIdx];
     if (!w) return { total: 0, done: 0, pct: 0 };
     let total = 0, done = 0;
     w.days.forEach(d => d.problems.forEach(p => {
       total++;
-      if (completedProblems[p.id]) done++;
+      if (p.isCompleted) done++;
     }));
     return { total, done, pct: total ? Math.round(done / total * 100) : 0 };
   };
@@ -89,18 +100,16 @@ export function useProgress(weeks) {
 
   const getDayStats = (day) => {
     let total = day.problems.length, done = 0;
-    day.problems.forEach(p => { if (completedProblems[p.id]) done++; });
+    day.problems.forEach(p => { if (p.isCompleted) done++; });
     return { total, done, complete: total > 0 && done === total, pct: total ? Math.round(done / total * 100) : 0 };
   };
 
-  // Days until interview
   const getDaysLeft = () => {
     const target = new Date('2026-05-26');
     const today = new Date(); today.setHours(0, 0, 0, 0);
     return Math.max(0, Math.ceil((target - today) / 864e5));
   };
 
-  // Get next uncompleted session
   const getNextSession = () => {
     for (let wi = 0; wi < weeks.length; wi++) {
       for (let di = 0; di < weeks[wi].days.length; di++) {
@@ -113,7 +122,7 @@ export function useProgress(weeks) {
   };
 
   return {
-    completedProblems,
+    weeks,
     toggleProblem,
     isCompleted,
     getWeekStats,
@@ -124,8 +133,6 @@ export function useProgress(weeks) {
     saveNote,
     getNote,
     config,
-    saveConfig,
-    notes,
-    setNotes,
+    saveConfig
   };
 }

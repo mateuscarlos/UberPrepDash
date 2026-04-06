@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './presentation/design-system/layout.css';
 import './presentation/pages/pages.css';
-import dataOut from './infrastructure/data/data_out.json';
 import { warmupGuides } from './infrastructure/data/studyResources';
 import { Button } from './presentation/design-system/components/UI';
 import { ProblemAccordion } from './presentation/components/ProblemAccordion';
@@ -10,28 +9,55 @@ import { useProgress } from './application/hooks/useProgress';
 function App() {
   const [activeWeek, setActiveWeek] = useState(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const weeks = dataOut;
+  const [initialData, setInitialData] = useState({ weeks: [], config: { apiKey: '', model: '' } });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/data')
+      .then(res => res.json())
+      .then(data => {
+        setInitialData(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, []);
+
   
   const {
+    weeks, // from hook state
     toggleProblem, isCompleted,
     getWeekStats, getGlobalStats, getDayStats,
     getDaysLeft, getNextSession,
     saveNote, getNote,
     config, saveConfig,
-  } = useProgress(weeks);
+  } = useProgress(initialData);
 
   const globalStats = getGlobalStats();
   const daysLeft = getDaysLeft();
   const nextSession = getNextSession();
 
   // Settings handlers
-  const [tempKey, setTempKey] = useState(config.apiKey);
-  const [tempModel, setTempModel] = useState(config.model);
+  const [tempKey, setTempKey] = useState(config?.apiKey || '');
+  const [tempModel, setTempModel] = useState(config?.model || 'gemini-2.5-flash');
+
+  useEffect(() => {
+    if (!loading && config) {
+      setTempKey(config.apiKey || '');
+      setTempModel(config.model || 'gemini-2.5-flash');
+    }
+  }, [loading, config]);
 
   const handleSaveSettings = () => {
     saveConfig({ apiKey: tempKey, model: tempModel });
     setSettingsOpen(false);
   };
+
+  if (loading) {
+    return <div style={{padding: 40, color: 'var(--text-secondary)'}}>Carregando plano de estudos e banco de dados...</div>;
+  }
 
   return (
     <div className="app-container">

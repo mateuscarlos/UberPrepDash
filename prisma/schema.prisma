@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Config {
+  id     Int     @id @default(1)
+  apiKey String?
+  model  String  @default("gemini-2.5-flash")
+}
+
+model Week {
+  id         Int      @id @default(autoincrement())
+  weekNumber Int      @unique
+  title      String
+  subtitle   String?
+  totalHours Float?
+  days       Day[]
+  resources  Resource[]
+}
+
+model Day {
+  id        String    @id
+  weekId    Int
+  week      Week      @relation(fields: [weekId], references: [id], onDelete: Cascade)
+  label     String
+  dayName   String
+  topic     String
+  time      String?
+  review    Boolean   @default(false)
+  tip       String?
+  note      String?
+  problems  Problem[]
+}
+
+model Problem {
+  id          String   @id
+  dayId       String
+  day         Day      @relation(fields: [dayId], references: [id], onDelete: Cascade)
+  name        String
+  freq        String
+  lc          String?
+  
+  isCompleted Boolean  @default(false)
+  userNote    String?  
+
+  interactions AiInteraction[]
+}
+
+model AiInteraction {
+  id        String   @id @default(uuid())
+  problemId String
+  problem   Problem  @relation(fields: [problemId], references: [id], onDelete: Cascade)
+  type      String   
+  content   String
+  createdAt DateTime @default(now())
+}
+
+model Resource {
+  id        Int      @id @default(autoincrement())
+  weekId    Int?
+  week      Week?    @relation(fields: [weekId], references: [id], onDelete: Cascade)
+  type      String   
+  label     String
+  author    String?
+  url       String
+}
