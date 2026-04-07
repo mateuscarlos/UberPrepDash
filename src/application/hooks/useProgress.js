@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 export function useProgress(initialData) {
   const [weeks, setWeeks] = useState(initialData.weeks || []);
@@ -9,6 +9,18 @@ export function useProgress(initialData) {
     setWeeks(initialData.weeks || []);
     setConfigLocal(initialData.config || { apiKey: '', model: '' });
   }, [initialData]);
+
+  const problemsMap = useMemo(() => {
+    const map = new Map();
+    for (const w of weeks) {
+      for (const d of w.days) {
+        for (const p of d.problems) {
+          map.set(p.id, p);
+        }
+      }
+    }
+    return map;
+  }, [weeks]);
 
   const toggleProblem = async (id, isCompleted) => {
     setWeeks(prev => prev.map(w => ({
@@ -29,13 +41,7 @@ export function useProgress(initialData) {
   };
 
   const isCompleted = (id) => {
-    for (const w of weeks) {
-      for (const d of w.days) {
-        const p = d.problems.find(p => p.id === id);
-        if (p) return p.isCompleted;
-      }
-    }
-    return false;
+    return problemsMap.get(id)?.isCompleted || false;
   };
 
   const saveNote = async (probId, text) => {
@@ -57,13 +63,7 @@ export function useProgress(initialData) {
   };
 
   const getNote = (id) => {
-    for (const w of weeks) {
-      for (const d of w.days) {
-        const p = d.problems.find(p => p.id === id);
-        if (p) return p.userNote || '';
-      }
-    }
-    return '';
+    return problemsMap.get(id)?.userNote || '';
   };
 
   const saveConfig = async (newConfig) => {
