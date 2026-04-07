@@ -6,6 +6,8 @@ services:
     container_name: uberprepdash
     ports:
       - "3080:80"
+    env_file:
+      - .env
     environment:
       - PORT=80
       - DATABASE_URL=file:/app/database/uberprep.db

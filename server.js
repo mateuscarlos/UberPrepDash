@@ -22,7 +22,7 @@ app.use(express.json());
 // API: Get entire study plan with user progress
 app.get('/api/data', async (req, res) => {
   try {
-    const weeks = await prisma.week.findMany({
+    const rawWeeks = await prisma.week.findMany({
       orderBy: { weekNumber: 'asc' },
       include: {
         days: {
@@ -33,10 +33,13 @@ app.get('/api/data', async (req, res) => {
       }
     });
 
+    const weeks = rawWeeks.map(w => ({ ...w, week: w.weekNumber }));
+
     const resources = await prisma.resource.findMany();
-    const config = await prisma.config.findFirst() || { apiKey: '', model: 'gemini-2.5-flash' };
+    const config = await prisma.config.findFirst() || { model: 'gemini-2.5-flash' };
     
-    res.json({ weeks, resources, config });
+    // Never send the API key to the frontend
+    res.json({ weeks, resources, config: { model: config.model } });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal server error' });
@@ -75,19 +78,59 @@ app.post('/api/problem/:id/note', async (req, res) => {
   }
 });
 
-// API: Save settings
+// API: Save settings (model only, API key is server-side)
 app.post('/api/config', async (req, res) => {
-  const { apiKey, model } = req.body;
+  const { model } = req.body;
   try {
     const updated = await prisma.config.upsert({
       where: { id: 1 },
-      update: { apiKey, model },
-      create: { id: 1, apiKey, model }
+      update: { model },
+      create: { id: 1, model }
     });
-    res.json(updated);
+    res.json({ model: updated.model });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Erro ao salvar configuração.' });
+  }
+});
+
+// API: Proxy for AI chat (key stays server-side)
+app.post('/api/ai/chat', async (req, res) => {
+  const apiKey = process.env.AI_API_KEY;
+  if (!apiKey) {
+    return res.status(500).json({ error: 'AI API key not configured on server.' });
+  }
+
+  try {
+    const { model, messages } = req.body;
+    const config = await prisma.config.findFirst();
+    const selectedModel = model || config?.model || 'gemini-2.5-flash';
+
+    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: selectedModel,
+        messages,
+        max_tokens: 1024,
+        temperature: 0.7,
+        top_p: 0.9,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      return res.status(response.status).json({ error: data.error?.message || 'AI request failed.' });
+    }
+
+    res.json(data);
+  } catch (error) {
+    console.error('AI proxy error:', error);
+    res.status(500).json({ error: 'Erro ao se comunicar com a IA.' });
   }
 });
 

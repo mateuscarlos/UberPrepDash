@@ -9,11 +9,74 @@ function getProblemSlug(name) {
 
 const freqLabels = { hot: 'Top Uber', mid: 'Alta Freq', ok: 'Revisão' };
 
+const SYSTEM_PROMPT = `
+Você é um Coach de Algoritmos Sênior da Uber.
+Ao explicar a INTUIÇÃO de um problema:
+1. Comece com uma analogia da vida real.
+2. Explique a mudança de perspectiva (ex: de busca bruta para busca de complemento).
+3. Nunca dê o código nesta fase, foque na 'estratégia mental'.
+4. Mantenha a resposta entre 200 a 400 palavras para ser profunda mas direta.
+`;
+
+const AI_PROMPTS = {
+  dica: (name, lc) => `Dê a intuição para o problema LeetCode #${lc}: ${name}. Comece com uma analogia da vida real, explique a mudança de perspectiva e foque na estratégia mental sem dar código.`,
+  abordagem: (name, lc) => `Explique a abordagem ideal para resolver o problema LeetCode #${lc} "${name}". Inclua a complexidade de tempo e espaço. Responda em português do Brasil.`,
+  python: (name, lc) => `Mostre a solução em Python para o problema LeetCode #${lc} "${name}" com comentários explicativos em português. Inclua a complexidade de tempo e espaço.`,
+  edge: (name, lc) => `Liste os principais edge cases e armadilhas do problema LeetCode #${lc} "${name}". Responda em português do Brasil, de forma concisa e direta.`,
+};
+
 export function ProblemAccordion({ problem, isCompleted, onToggleCompletion, onSaveNote, savedNote }) {
   const [isOpen, setIsOpen] = useState(false);
   const [localNote, setLocalNote] = useState(savedNote || '');
+  const [aiResponse, setAiResponse] = useState(null);
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiError, setAiError] = useState(null);
+  const [activePrompt, setActivePrompt] = useState(null);
 
   const handleLineClick = () => setIsOpen(!isOpen);
+
+  const handleAiClick = async (promptType) => {
+    if (aiLoading) return;
+    
+    setActivePrompt(promptType);
+    setAiLoading(true);
+    setAiError(null);
+    setAiResponse(null);
+
+    const promptFn = AI_PROMPTS[promptType];
+    const userMessage = promptFn(problem.name, problem.lc || '??');
+
+    try {
+      const res = await fetch('/api/ai/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: [
+            { role: 'system', content: SYSTEM_PROMPT },
+            { role: 'user', content: userMessage },
+          ],
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Erro na requisição');
+      }
+
+      const content = data.choices?.[0]?.message?.content;
+      if (content) {
+        setAiResponse(content);
+      } else {
+        throw new Error('Resposta vazia da IA');
+      }
+    } catch (err) {
+      console.error('AI Coach error:', err);
+      setAiError(err.message || 'Erro ao se comunicar com a IA');
+    } finally {
+      setAiLoading(false);
+    }
+  };
 
   const slug = getProblemSlug(problem.name);
   const lcLink = problem.lc 
@@ -72,14 +135,37 @@ export function ProblemAccordion({ problem, isCompleted, onToggleCompletion, onS
           <div className="prob-ai-section">
             <div className="prob-ai-header">🤖 AI Coach</div>
             <div className="prob-ai-buttons">
-              <Button variant="ai">💡 Dica</Button>
-              <Button variant="ai">🧠 Abordagem</Button>
-              <Button variant="ai">🐍 Python</Button>
-              <Button variant="ai">⚠️ Edge Cases</Button>
+              <Button variant="ai" className={activePrompt === 'dica' ? 'active' : ''} onClick={() => handleAiClick('dica')} disabled={aiLoading}>💡 Dica</Button>
+              <Button variant="ai" className={activePrompt === 'abordagem' ? 'active' : ''} onClick={() => handleAiClick('abordagem')} disabled={aiLoading}>🧠 Abordagem</Button>
+              <Button variant="ai" className={activePrompt === 'python' ? 'active' : ''} onClick={() => handleAiClick('python')} disabled={aiLoading}>🐍 Python</Button>
+              <Button variant="ai" className={activePrompt === 'edge' ? 'active' : ''} onClick={() => handleAiClick('edge')} disabled={aiLoading}>⚠️ Edge Cases</Button>
             </div>
-            <div className="prob-ai-chat-placeholder">
-              Clique em um prompt acima para interagir com o AI Coach
-            </div>
+
+            {/* AI Response Area */}
+            {aiLoading && (
+              <div className="prob-ai-loading">
+                <div className="ai-spinner"></div>
+                <span>Pensando...</span>
+              </div>
+            )}
+
+            {aiError && (
+              <div className="prob-ai-error">
+                <span>❌ {aiError}</span>
+              </div>
+            )}
+
+            {aiResponse && !aiLoading && (
+              <div className="prob-ai-response">
+                <pre className="prob-ai-response-content">{aiResponse}</pre>
+              </div>
+            )}
+
+            {!aiResponse && !aiLoading && !aiError && (
+              <div className="prob-ai-chat-placeholder">
+                Clique em um prompt acima para interagir com o AI Coach
+              </div>
+            )}
           </div>
 
           {/* Notes */}

@@ -85,6 +85,56 @@
   display: flex; align-items: center; justify-content: center;
 }
 
+/* AI Loading */
+.prob-ai-loading {
+  display: flex; align-items: center; gap: 10px;
+  padding: 16px; background: var(--bg-tertiary);
+  border-radius: var(--radius-sm); color: var(--accent-ai, var(--accent-primary));
+  font-size: 13px; font-weight: 500;
+}
+.ai-spinner {
+  width: 18px; height: 18px;
+  border: 2px solid var(--border-default);
+  border-top: 2px solid var(--accent-ai, var(--accent-primary));
+  border-radius: 50%;
+  animation: ai-spin 0.8s linear infinite;
+}
+@keyframes ai-spin { to { transform: rotate(360deg); } }
+
+/* AI Error */
+.prob-ai-error {
+  padding: 12px 16px; background: rgba(248, 81, 73, 0.08);
+  border: 1px solid rgba(248, 81, 73, 0.25);
+  border-radius: var(--radius-sm); color: #f85149;
+  font-size: 13px;
+}
+
+/* AI Response */
+.prob-ai-response {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.prob-ai-response-content {
+  padding: 16px; margin: 0;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 13px; line-height: 1.7;
+  color: var(--text-primary);
+  white-space: pre-wrap; word-wrap: break-word;
+  max-height: 400px; overflow-y: auto;
+}
+
+/* AI Button active state */
+.ds-btn-ai.active {
+  background: var(--accent-ai, var(--accent-primary));
+  color: #fff;
+  border-color: var(--accent-ai, var(--accent-primary));
+}
+.ds-btn-ai:disabled {
+  opacity: 0.5; cursor: not-allowed;
+}
+
 /* Notes section */
 .prob-notes-section {}
 .prob-notes-label {
