@@ -45,6 +45,7 @@ function App() {
 
   useEffect(() => {
     if (!loading && config) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setTempKey(config.apiKey || '');
       setTempModel(config.model || 'gemini-2.5-flash');
     }

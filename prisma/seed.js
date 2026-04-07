@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { PrismaClient } from '../src/generated/prisma/index.js';
+/* global process */
 import { PrismaBetterSqlite3 } from '@prisma/adapter-better-sqlite3';
 import "dotenv/config";
 
