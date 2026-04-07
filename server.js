@@ -35,11 +35,10 @@ app.get('/api/data', async (req, res) => {
 
     const weeks = rawWeeks.map(w => ({ ...w, week: w.weekNumber }));
 
-    const resources = await prisma.resource.findMany();
     const config = await prisma.config.findFirst() || { model: 'gemini-2.5-flash' };
     
     // Never send the API key to the frontend
-    res.json({ weeks, resources, config: { model: config.model } });
+    res.json({ weeks, config: { model: config.model } });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal server error' });
