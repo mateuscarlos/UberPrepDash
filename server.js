@@ -14,6 +14,8 @@ const adapter = new PrismaBetterSqlite3({
 });
 const prisma = new PrismaClient({ adapter });
 
+const ALLOWED_MODELS = ['gemini-2.5-flash', 'gemini-2.5-pro'];
+
 const app = express();
 
 app.use(cors());
@@ -80,6 +82,11 @@ app.post('/api/problem/:id/note', async (req, res) => {
 // API: Save settings (model only, API key is server-side)
 app.post('/api/config', async (req, res) => {
   const { model } = req.body;
+
+  if (!ALLOWED_MODELS.includes(model)) {
+    return res.status(400).json({ error: 'Unsupported model.' });
+  }
+
   try {
     const updated = await prisma.config.upsert({
       where: { id: 1 },
@@ -104,6 +111,10 @@ app.post('/api/ai/chat', async (req, res) => {
     const { model, messages } = req.body;
     const config = await prisma.config.findFirst();
     const selectedModel = model || config?.model || 'gemini-2.5-flash';
+
+    if (!ALLOWED_MODELS.includes(selectedModel)) {
+      return res.status(400).json({ error: 'Invalid model for chat.' });
+    }
 
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
